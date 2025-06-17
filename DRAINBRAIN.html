@@ -2,859 +2,403 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Тест по банковским переводам</title>
+  <title>Тест: Банковские переводы и лимиты в Чехии и Словакии</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 15px;
-      background: #f5f5f5;
-      color: #333;
+      max-width: 800px;
+      margin: 30px auto;
+      background: #f5f8fa;
+      padding: 20px;
+      border-radius: 10px;
     }
     h1 {
       text-align: center;
-      margin-bottom: 20px;
-    }
-    form {
-      background: #fff;
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      color: #2c3e50;
     }
     .question {
-      margin-bottom: 18px;
-    }
-    .question p {
-      font-weight: bold;
-      margin-bottom: 8px;
+      background: white;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     }
     label {
       display: block;
-      margin-bottom: 6px;
-      cursor: pointer;
-    }
-    input[type="radio"] {
-      margin-right: 10px;
-      vertical-align: middle;
+      margin: 8px 0;
       cursor: pointer;
     }
     button {
-      display: block;
-      margin: 20px auto 0;
-      background: #007bff;
-      color: #fff;
-      padding: 12px 25px;
-      font-size: 16px;
+      background: #3498db;
+      color: white;
       border: none;
-      border-radius: 6px;
+      padding: 12px 25px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background: #0056b3;
+      font-size: 16px;
+      margin-top: 15px;
+      display: block;
+      width: 100%;
     }
     .result {
-      max-width: 800px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      font-size: 16px;
-      line-height: 1.4;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 18px;
+      color: #27ae60;
     }
-    .feedback.correct {
+    .feedback {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .correct {
       color: green;
-      margin-bottom: 4px;
     }
-    .feedback.wrong {
+    .wrong {
       color: red;
-      margin-bottom: 4px;
-    }
-
-    /* Адаптивность */
-    @media (max-width: 600px) {
-      body {
-        margin: 10px;
-      }
-      form, .result {
-        padding: 15px;
-        max-width: 100%;
-      }
-      button {
-        width: 100%;
-        font-size: 18px;
-        padding: 15px 0;
-      }
-      label {
-        font-size: 14px;
-      }
-      .question p {
-        font-size: 16px;
-      }
     }
   </style>
 </head>
 <body>
-  <h1>Тест по банковским переводам Чехия-Словакия</h1>
+
+  <h1>Тест: Банковские переводы и лимиты в Чехии и Словакии</h1>
+
   <form id="quizForm">
 
+    <!-- 1-15 вопросы из предыдущего блока -->
+
     <div class="question">
-      <p>1. Какой тип банковских переводов самый дешёвый между Чехией и Словакией?</p>
-      <label><input type="radio" name="q1" value="0"> Мгновенные переводы</label>
-      <label><input type="radio" name="q1" value="1"> SWIFT-переводы</label>
-      <label><input type="radio" name="q1" value="2"> SEPA-переводы</label>
-      <label><input type="radio" name="q1" value="3"> Наличные через почту</label>
+      <p>1. Какие виды переводов чаще всего используются внутри Чехии?</p>
+      <label><input type="radio" name="q1" value="0"> SEPA-переводы</label>
+      <label><input type="radio" name="q1" value="1"> Domácí platební příkaz (внутренние переводы)</label>
+      <label><input type="radio" name="q1" value="2"> SWIFT-переводы</label>
+      <label><input type="radio" name="q1" value="3"> Наличные переводы через почту</label>
     </div>
 
     <div class="question">
-      <p>2. Какое преимущество SEPA-переводов?</p>
-      <label><input type="radio" name="q2" value="0"> Быстрее мгновенных</label>
-      <label><input type="radio" name="q2" value="1"> Более низкая комиссия</label>
-      <label><input type="radio" name="q2" value="2"> Нет ограничений по сумме</label>
-      <label><input type="radio" name="q2" value="3"> Работают только в Чехии</label>
+      <p>2. Какие банки являются крупнейшими в Словакии?</p>
+      <label><input type="radio" name="q2" value="0"> Tatra banka, VÚB, Slovenská sporiteľňa</label>
+      <label><input type="radio" name="q2" value="1"> Česká spořitelna, Komerční banka</label>
+      <label><input type="radio" name="q2" value="2"> Raiffeisen Bank International</label>
+      <label><input type="radio" name="q2" value="3"> Moneta Money Bank</label>
     </div>
 
     <div class="question">
-      <p>3. Что означает аббревиатура SWIFT?</p>
-      <label><input type="radio" name="q3" value="0"> Society for Worldwide Interbank Financial Telecommunication</label>
-      <label><input type="radio" name="q3" value="1"> Simple Worldwide Instant Funds Transfer</label>
-      <label><input type="radio" name="q3" value="2"> System Without International Financial Transactions</label>
-      <label><input type="radio" name="q3" value="3"> None of the above</label>
+      <p>3. Какой лимит на перевод в Словакии без дополнительной проверки обычно установлен в онлайн-банкинге?</p>
+      <label><input type="radio" name="q3" value="0"> До 10 000 EUR</label>
+      <label><input type="radio" name="q3" value="1"> До 50 000 EUR</label>
+      <label><input type="radio" name="q3" value="2"> До 5 000 EUR</label>
+      <label><input type="radio" name="q3" value="3"> Нет лимита</label>
     </div>
 
     <div class="question">
-      <p>4. Как долго обычно занимает SEPA-перевод?</p>
-      <label><input type="radio" name="q4" value="0"> 1-2 рабочих дня</label>
-      <label><input type="radio" name="q4" value="1"> Мгновенно</label>
-      <label><input type="radio" name="q4" value="2"> До недели</label>
-      <label><input type="radio" name="q4" value="3"> Несколько часов</label>
+      <p>4. В Словакии лимит на снятие наличных с карты в банкомате обычно составляет:</p>
+      <label><input type="radio" name="q4" value="0"> 500 EUR в день</label>
+      <label><input type="radio" name="q4" value="1"> 1500 EUR в день</label>
+      <label><input type="radio" name="q4" value="2"> 100 EUR в день</label>
+      <label><input type="radio" name="q4" value="3"> Нет ограничений</label>
     </div>
 
     <div class="question">
-      <p>5. Какая валюта используется в SEPA-переводах?</p>
-      <label><input type="radio" name="q5" value="0"> Евро</label>
-      <label><input type="radio" name="q5" value="1"> Чешская крона</label>
-      <label><input type="radio" name="q5" value="2"> Словацкая крона</label>
-      <label><input type="radio" name="q5" value="3"> Доллары США</label>
+      <p>5. Какой из перечисленных переводов считается самым быстрым для внутреннего перевода в Чехии?</p>
+      <label><input type="radio" name="q5" value="0"> Instantní platba (мгновенный перевод)</label>
+      <label><input type="radio" name="q5" value="1"> SEPA-перевод</label>
+      <label><input type="radio" name="q5" value="2"> SWIFT-перевод</label>
+      <label><input type="radio" name="q5" value="3"> Почтовый перевод</label>
     </div>
 
     <div class="question">
-      <p>6. Какой код используется для идентификации банков в SWIFT?</p>
-      <label><input type="radio" name="q6" value="0"> SWIFT/BIC код</label>
-      <label><input type="radio" name="q6" value="1"> IBAN</label>
-      <label><input type="radio" name="q6" value="2"> CPF</label>
-      <label><input type="radio" name="q6" value="3"> MICR</label>
+      <p>6. Какой максимальный дневной лимит по онлайн-покупкам на карте в Словакии обычно установлен?</p>
+      <label><input type="radio" name="q6" value="0"> 1000 EUR</label>
+      <label><input type="radio" name="q6" value="1"> 10 000 EUR</label>
+      <label><input type="radio" name="q6" value="2"> 300 EUR</label>
+      <label><input type="radio" name="q6" value="3"> Нет лимита</label>
     </div>
 
     <div class="question">
-      <p>7. Какой документ подтверждает проведение банковского перевода?</p>
-      <label><input type="radio" name="q7" value="0"> Расписка</label>
-      <label><input type="radio" name="q7" value="1"> Квитанция</label>
-      <label><input type="radio" name="q7" value="2"> Счёт</label>
-      <label><input type="radio" name="q7" value="3"> Выписка из банка</label>
+      <p>7. Какие из перечисленных банков относятся к крупнейшим в Чехии?</p>
+      <label><input type="radio" name="q7" value="0"> Česká spořitelna, Komerční banka, ČSOB</label>
+      <label><input type="radio" name="q7" value="1"> Tatra banka, VÚB, Slovenská sporiteľňa</label>
+      <label><input type="radio" name="q7" value="2"> Moneta Money Bank и Air Bank</label>
+      <label><input type="radio" name="q7" value="3"> Только первый и третий варианты</label>
     </div>
 
     <div class="question">
-      <p>8. Можно ли отправить SEPA-перевод в Чехии на счёт в Словакии?</p>
-      <label><input type="radio" name="q8" value="0"> Да</label>
-      <label><input type="radio" name="q8" value="1"> Нет</label>
-      <label><input type="radio" name="q8" value="2"> Только через SWIFT</label>
-      <label><input type="radio" name="q8" value="3"> Только через банк-посредник</label>
+      <p>8. Лимит на перевод в CZK через domácí platební příkaz обычно составляет:</p>
+      <label><input type="radio" name="q8" value="0"> До 100 000 CZK без подтверждения</label>
+      <label><input type="radio" name="q8" value="1"> До 10 000 CZK</label>
+      <label><input type="radio" name="q8" value="2"> Нет лимита</label>
+      <label><input type="radio" name="q8" value="3"> До 50 000 CZK</label>
     </div>
 
     <div class="question">
-      <p>9. Что такое IBAN?</p>
-      <label><input type="radio" name="q9" value="0"> Международный номер банковского счёта</label>
-      <label><input type="radio" name="q9" value="1"> Код банка</label>
-      <label><input type="radio" name="q9" value="2"> Номер перевода</label>
-      <label><input type="radio" name="q9" value="3"> Номер карты</label>
+      <p>9. Какой из вариантов перевода между Чехией и Словакией является международным?</p>
+      <label><input type="radio" name="q9" value="0"> SEPA-перевод</label>
+      <label><input type="radio" name="q9" value="1"> Domácí platba</label>
+      <label><input type="radio" name="q9" value="2"> Instantní platba</label>
+      <label><input type="radio" name="q9" value="3"> Наличный перевод</label>
     </div>
 
     <div class="question">
-      <p>10. Можно ли использовать SWIFT-перевод для срочных платежей?</p>
-      <label><input type="radio" name="q10" value="0"> Нет</label>
-      <label><input type="radio" name="q10" value="1"> Да</label>
-      <label><input type="radio" name="q10" value="2"> Только при сумме свыше 1000 евро</label>
-      <label><input type="radio" name="q10" value="3"> Только в выходные</label>
+      <p>10. Какой лимит на снятие наличных в банкомате в Чехии обычно установлен для стандартной карты?</p>
+      <label><input type="radio" name="q10" value="0"> 5 000 CZK</label>
+      <label><input type="radio" name="q10" value="1"> 15 000 CZK</label>
+      <label><input type="radio" name="q10" value="2"> 1 000 CZK</label>
+      <label><input type="radio" name="q10" value="3"> Нет ограничений</label>
     </div>
 
     <div class="question">
-      <p>11. Какой из следующих вариантов НЕ является видом банковских переводов?</p>
-      <label><input type="radio" name="q11" value="0"> SEPA</label>
-      <label><input type="radio" name="q11" value="1"> Western Union</label>
-      <label><input type="radio" name="q11" value="2"> SWIFT</label>
-      <label><input type="radio" name="q11" value="3"> Наличные</label>
+      <p>11. Что из перечисленного обычно не влияет на лимит переводов в банке?</p>
+      <label><input type="radio" name="q11" value="0"> Тип счета</label>
+      <label><input type="radio" name="q11" value="1"> Валюта перевода</label>
+      <label><input type="radio" name="q11" value="2"> Длина имени получателя</label>
+      <label><input type="radio" name="q11" value="3"> Канал перевода (онлайн/офис)</label>
     </div>
 
     <div class="question">
-      <p>12. Какой реквизит НЕ нужен для SEPA-перевода?</p>
-      <label><input type="radio" name="q12" value="0"> IBAN получателя</label>
-      <label><input type="radio" name="q12" value="1"> BIC/SWIFT код банка</label>
-      <label><input type="radio" name="q12" value="2"> Адрес получателя</label>
-      <label><input type="radio" name="q12" value="3"> Сумма перевода</label>
+      <p>12. Какие способы перевода денег между Чехией и Словакией самые дешёвые?</p>
+      <label><input type="radio" name="q12" value="0"> Мгновенные переводы</label>
+      <label><input type="radio" name="q12" value="1"> SWIFT-переводы</label>
+      <label><input type="radio" name="q12" value="2"> SEPA-переводы</label>
+      <label><input type="radio" name="q12" value="3"> Наличные через почту</label>
     </div>
 
     <div class="question">
-      <p>13. В каком случае перевод считается мгновенным?</p>
-      <label><input type="radio" name="q13" value="0"> Деньги приходят в течение минут</label>
-      <label><input type="radio" name="q13" value="1"> Перевод происходит в течение дня</label>
-      <label><input type="radio" name="q13" value="2"> Перевод занимает до 3 дней</label>
-      <label><input type="radio" name="q13" value="3"> Деньги приходят в конце месяца</label>
+      <p>13. Что обычно требуется для оформления кредита в банке Чехии?</p>
+      <label><input type="radio" name="q13" value="0"> Постоянный доход, кредитная история, возраст</label>
+      <label><input type="radio" name="q13" value="1"> Наличие недвижимости в Чехии</label>
+      <label><input type="radio" name="q13" value="2"> Личные рекомендации</label>
+      <label><input type="radio" name="q13" value="3"> Владение акциями банка</label>
     </div>
 
     <div class="question">
-      <p>14. Что влияет на стоимость SWIFT-перевода?</p>
-      <label><input type="radio" name="q14" value="0"> Валюта и сумма перевода</label>
-      <label><input type="radio" name="q14" value="1"> Количество участников</label>
-      <label><input type="radio" name="q14" value="2"> Адрес получателя</label>
-      <label><input type="radio" name="q14" value="3"> Срок доставки</label>
+      <p>14. Какое ограничение может быть у мгновенных переводов (instantní platby) в Чехии?</p>
+      <label><input type="radio" name="q14" value="0"> До 200 000 CZK</label>
+      <label><input type="radio" name="q14" value="1"> До 1 000 000 CZK</label>
+      <label><input type="radio" name="q14" value="2"> Нет ограничений</label>
+      <label><input type="radio" name="q14" value="3"> До 50 000 CZK</label>
     </div>
 
     <div class="question">
-      <p>15. Какие данные обязательно проверяет банк при международном переводе?</p>
-      <label><input type="radio" name="q15" value="0"> IBAN и BIC код</label>
-      <label><input type="radio" name="q15" value="1"> Имя получателя и адрес</label>
-      <label><input type="radio" name="q15" value="2"> Паспортные данные отправителя</label>
-      <label><input type="radio" name="q15" value="3"> Телефон получателя</label>
+      <p>15. Какие банки предлагают интернет-банкинг с возможностью управления лимитами карт?</p>
+      <label><input type="radio" name="q15" value="0"> Все крупные банки в Чехии и Словакии</label>
+      <label><input type="radio" name="q15" value="1"> Только иностранные банки</label>
+      <label><input type="radio" name="q15" value="2"> Только онлайн-банки</label>
+      <label><input type="radio" name="q15" value="3"> Ни один банк</label>
+    </div>
+
+    <!-- Новые вопросы 16-36 -->
+
+    <div class="question">
+      <p>16. Какой срок зачисления SEPA-переводов в Чехии?</p>
+      <label><input type="radio" name="q16" value="0"> В течение одного рабочего дня</label>
+      <label><input type="radio" name="q16" value="1"> До 5 рабочих дней</label>
+      <label><input type="radio" name="q16" value="2"> Мгновенно</label>
+      <label><input type="radio" name="q16" value="3"> До 10 рабочих дней</label>
     </div>
 
     <div class="question">
-      <p>16. Можно ли отменить SWIFT-перевод после отправки?</p>
-      <label><input type="radio" name="q16" value="0"> Да, если получатель не снял деньги</label>
-      <label><input type="radio" name="q16" value="1"> Нет</label>
-      <label><input type="radio" name="q16" value="2"> Только в первые 24 часа</label>
-      <label><input type="radio" name="q16" value="3"> Только если банк допускает</label>
+      <p>17. Какой документ в Словакии нужен для открытия счета иностранцу?</p>
+      <label><input type="radio" name="q17" value="0"> Паспорт или ID карта</label>
+      <label><input type="radio" name="q17" value="1"> Справка о доходах</label>
+      <label><input type="radio" name="q17" value="2"> Рекомендательное письмо от работодателя</label>
+      <label><input type="radio" name="q17" value="3"> Водительское удостоверение</label>
     </div>
 
     <div class="question">
-      <p>17. Какой сервис используют для перевода денег между Чехией и Словакией?</p>
-      <label><input type="radio" name="q17" value="0"> SEPA</label>
-      <label><input type="radio" name="q17" value="1"> SWIFT</label>
-      <label><input type="radio" name="q17" value="2"> Western Union</label>
-      <label><input type="radio" name="q17" value="3"> PayPal</label>
+      <p>18. Какой лимит установлена для мгновенных платежей в Словакии?</p>
+      <label><input type="radio" name="q18" value="0"> 15 000 EUR</label>
+      <label><input type="radio" name="q18" value="1"> 1000 EUR</label>
+      <label><input type="radio" name="q18" value="2"> 50 000 EUR</label>
+      <label><input type="radio" name="q18" value="3"> Нет ограничений</label>
     </div>
 
     <div class="question">
-      <p>18. Что нужно для выполнения SEPA-перевода?</p>
-      <label><input type="radio" name="q18" value="0"> IBAN и BIC</label>
-      <label><input type="radio" name="q18" value="1"> Только номер карты</label>
-      <label><input type="radio" name="q18" value="2"> Адрес и телефон</label>
-      <label><input type="radio" name="q18" value="3"> Только имя получателя</label>
+      <p>19. Что из перечисленного обычно не входит в обязательные данные для перевода?</p>
+      <label><input type="radio" name="q19" value="0"> Имя получателя</label>
+      <label><input type="radio" name="q19" value="1"> IBAN</label>
+      <label><input type="radio" name="q19" value="2"> Кредитный рейтинг отправителя</label>
+      <label><input type="radio" name="q19" value="3"> Назначение платежа</label>
     </div>
 
     <div class="question">
-      <p>19. Какие страны входят в зону SEPA?</p>
-      <label><input type="radio" name="q19" value="0"> Все страны Евросоюза</label>
-      <label><input type="radio" name="q19" value="1"> Только страны еврозоны</label>
-      <label><input type="radio" name="q19" value="2"> Евросоюз + Норвегия, Исландия, Лихтенштейн</label>
-      <label><input type="radio" name="q19" value="3"> Все страны Европы</label>
+      <p>20. Какой валютой чаще всего совершаются переводы между Чехией и Словакией?</p>
+      <label><input type="radio" name="q20" value="0"> CZK</label>
+      <label><input type="radio" name="q20" value="1"> EUR</label>
+      <label><input type="radio" name="q20" value="2"> USD</label>
+      <label><input type="radio" name="q20" value="3"> GBP</label>
     </div>
 
     <div class="question">
-      <p>20. Можно ли отправить SEPA-перевод в иностранной валюте?</p>
-      <label><input type="radio" name="q20" value="0"> Нет, только в евро</label>
-      <label><input type="radio" name="q20" value="1"> Да</label>
-      <label><input type="radio" name="q20" value="2"> Только доллары</label>
-      <label><input type="radio" name="q20" value="3"> Только кроны</label>
+      <p>21. Какие лимиты обычно можно изменить в интернет-банкинге?</p>
+      <label><input type="radio" name="q21" value="0"> Лимиты на переводы и снятие наличных</label>
+      <label><input type="radio" name="q21" value="1"> Лимиты на количество платежей в месяц</label>
+      <label><input type="radio" name="q21" value="2"> Лимиты по кредитам</label>
+      <label><input type="radio" name="q21" value="3"> Нет лимитов для изменения</label>
     </div>
 
     <div class="question">
-      <p>21. Для чего нужен BIC-код?</p>
-      <label><input type="radio" name="q21" value="0"> Для идентификации банка при переводах</label>
-      <label><input type="radio" name="q21" value="1"> Для указания валюты</label>
-      <label><input type="radio" name="q21" value="2"> Для обозначения страны</label>
-      <label><input type="radio" name="q21" value="3"> Для кода филиала</label>
+      <p>22. Какой срок зачисления средств при мгновенных переводах?</p>
+      <label><input type="radio" name="q22" value="0"> Мгновенно или до нескольких секунд</label>
+      <label><input type="radio" name="q22" value="1"> До 1 часа</label>
+      <label><input type="radio" name="q22" value="2"> До 24 часов</label>
+      <label><input type="radio" name="q22" value="3"> До 3 рабочих дней</label>
     </div>
 
     <div class="question">
-      <p>22. Как определить правильность IBAN?</p>
-      <label><input type="radio" name="q22" value="0"> По длине и контрольному числу</label>
-      <label><input type="radio" name="q22" value="1"> По первым двум буквам</label>
-      <label><input type="radio" name="q22" value="2"> По номеру счёта</label>
-      <label><input type="radio" name="q22" value="3"> По банку отправителя</label>
+      <p>23. Как называется национальная валюта Словакии?</p>
+      <label><input type="radio" name="q23" value="0"> Крона</label>
+      <label><input type="radio" name="q23" value="1"> Евро</label>
+      <label><input type="radio" name="q23" value="2"> Форинт</label>
+      <label><input type="radio" name="q23" value="3"> Злотый</label>
     </div>
 
     <div class="question">
-      <p>23. Что нужно указать при переводе на другой счёт?</p>
-      <label><input type="radio" name="q23" value="0"> Только имя получателя</label>
-      <label><input type="radio" name="q23" value="1"> IBAN получателя</label>
-      <label><input type="radio" name="q23" value="2"> Адрес банка</label>
-      <label><input type="radio" name="q23" value="3"> Номер паспорта</label>
+      <p>24. Какие банки в Чехии предлагают услуги онлайн-банкинга?</p>
+      <label><input type="radio" name="q24" value="0"> Все крупные банки</label>
+      <label><input type="radio" name="q24" value="1"> Только мелкие</label>
+      <label><input type="radio" name="q24" value="2"> Только государственные</label>
+      <label><input type="radio" name="q24" value="3"> Ни один</label>
     </div>
 
     <div class="question">
-      <p>24. Что такое комиссия банка?</p>
-      <label><input type="radio" name="q24" value="0"> Плата за проведение операции</label>
-      <label><input type="radio" name="q24" value="1"> Процент от суммы вклада</label>
-      <label><input type="radio" name="q24" value="2"> Сумма возврата</label>
-      <label><input type="radio" name="q24" value="3"> Плата за пользование картой</label>
+      <p>25. Какая комиссия чаще всего взимается за международные переводы в CZK?</p>
+      <label><input type="radio" name="q25" value="0"> 0%</label>
+      <label><input type="radio" name="q25" value="1"> От 0.1% до 1%</label>
+      <label><input type="radio" name="q25" value="2"> 5%</label>
+      <label><input type="radio" name="q25" value="3"> 10%</label>
     </div>
 
     <div class="question">
-      <p>25. Можно ли отправить деньги на чужой счёт без подтверждения личности?</p>
-      <label><input type="radio" name="q25" value="0"> Нет</label>
-      <label><input type="radio" name="q25" value="1"> Да</label>
-      <label><input type="radio" name="q25" value="2"> Только если сумма до 100 евро</label>
-      <label><input type="radio" name="q25" value="3"> Только в Чехии</label>
+      <p>26. Можно ли в Чехии открыть счет в евро?</p>
+      <label><input type="radio" name="q26" value="0"> Да, в большинстве банков</label>
+      <label><input type="radio" name="q26" value="1"> Нет, только в CZK</label>
+      <label><input type="radio" name="q26" value="2"> Только для юридических лиц</label>
+      <label><input type="radio" name="q26" value="3"> Только через онлайн-банки</label>
     </div>
 
     <div class="question">
-      <p>26. Что такое "референтный номер" в переводе?</p>
-      <label><input type="radio" name="q26" value="0"> Уникальный идентификатор операции</label>
-      <label><input type="radio" name="q26" value="1"> Код банка</label>
-      <label><input type="radio" name="q26" value="2"> Номер счёта</label>
-      <label><input type="radio" name="q26" value="3"> Дата перевода</label>
+      <p>27. Что такое IBAN?</p>
+      <label><input type="radio" name="q27" value="0"> Международный номер банковского счета</label>
+      <label><input type="radio" name="q27" value="1"> Тип карты</label>
+      <label><input type="radio" name="q27" value="2"> Код банка</label>
+      <label><input type="radio" name="q27" value="3"> Секретный пароль</label>
     </div>
 
     <div class="question">
-      <p>27. Кому выгоднее использовать SWIFT-переводы?</p>
-      <label><input type="radio" name="q27" value="0"> Тем, кто переводит большие суммы</label>
-      <label><input type="radio" name="q27" value="1"> Тем, кто переводит мелкие суммы</label>
-      <label><input type="radio" name="q27" value="2"> Тем, кто переводит внутри одной страны</label>
-      <label><input type="radio" name="q27" value="3"> Тем, кто хочет избежать комиссий</label>
+      <p>28. Какой документ подтверждает личность при переводах в Чехии?</p>
+      <label><input type="radio" name="q28" value="0"> Паспорт или ID карта</label>
+      <label><input type="radio" name="q28" value="1"> Справка о доходах</label>
+      <label><input type="radio" name="q28" value="2"> Водительское удостоверение</label>
+      <label><input type="radio" name="q28" value="3"> Свидетельство о браке</label>
     </div>
 
     <div class="question">
-      <p>28. Что такое "корреспондентский счёт"?</p>
-      <label><input type="radio" name="q28" value="0"> Счёт банка в другом банке для международных операций</label>
-      <label><input type="radio" name="q28" value="1"> Счёт клиента в банке</label>
-      <label><input type="radio" name="q28" value="2"> Личный счёт отправителя</label>
-      <label><input type="radio" name="q28" value="3"> Счёт для внутренних переводов</label>
+      <p>29. Какой тип кредитов наиболее распространён в Чехии?</p>
+      <label><input type="radio" name="q29" value="0"> Потребительские кредиты</label>
+      <label><input type="radio" name="q29" value="1"> Ипотечные кредиты</label>
+      <label><input type="radio" name="q29" value="2"> Автокредиты</label>
+      <label><input type="radio" name="q29" value="3"> Кредиты на образование</label>
     </div>
 
     <div class="question">
-      <p>29. Какой банк обычно берёт комиссию за получение SWIFT-перевода?</p>
-      <label><input type="radio" name="q29" value="0"> Банк-получатель</label>
-      <label><input type="radio" name="q29" value="1"> Банк-отправитель</label>
-      <label><input type="radio" name="q29" value="2"> Корреспондентский банк</label>
-      <label><input type="radio" name="q29" value="3"> Ни один</label>
+      <p>30. Можно ли в Словакии использовать мгновенные переводы в выходные дни?</p>
+      <label><input type="radio" name="q30" value="0"> Да, 24/7</label>
+      <label><input type="radio" name="q30" value="1"> Нет, только в рабочие дни</label>
+      <label><input type="radio" name="q30" value="2"> Только до 18:00</label>
+      <label><input type="radio" name="q30" value="3"> Зависит от банка</label>
     </div>
 
     <div class="question">
-      <p>30. Что значит "IBAN проверка"?</p>
-      <label><input type="radio" name="q30" value="0"> Проверка формата и контрольного числа IBAN</label>
-      <label><input type="radio" name="q30" value="1"> Проверка наличия средств</label>
-      <label><input type="radio" name="q30" value="2"> Проверка адреса клиента</label>
-      <label><input type="radio" name="q30" value="3"> Проверка паспорта</label>
+      <p>31. Что такое SEPA?</p>
+      <label><input type="radio" name="q31" value="0"> Единая зона платежей в евро</label>
+      <label><input type="radio" name="q31" value="1"> Международный банк</label>
+      <label><input type="radio" name="q31" value="2"> Тип карты</label>
+      <label><input type="radio" name="q31" value="3"> Кредитный рейтинг</label>
     </div>
 
-    <button type="submit">Проверить ответы</button>
+    <div class="question">
+      <p>32. Какие данные необходимы для мгновенного перевода в Чехии?</p>
+      <label><input type="radio" name="q32" value="0"> IBAN и сумма</label>
+      <label><input type="radio" name="q32" value="1"> Только имя получателя</label>
+      <label><input type="radio" name="q32" value="2"> Только адрес получателя</label>
+      <label><input type="radio" name="q32" value="3"> Номер телефона получателя</label>
+    </div>
+
+    <div class="question">
+      <p>33. Можно ли управлять лимитами карт через мобильное приложение?</p>
+      <label><input type="radio" name="q33" value="0"> Да, во всех крупных банках</label>
+      <label><input type="radio" name="q33" value="1"> Нет</label>
+      <label><input type="radio" name="q33" value="2"> Только в онлайн-банках</label>
+      <label><input type="radio" name="q33" value="3"> Только по телефону</label>
+    </div>
+
+    <div class="question">
+      <p>34. Что такое SWIFT-перевод?</p>
+      <label><input type="radio" name="q34" value="0"> Международный банковский перевод</label>
+      <label><input type="radio" name="q34" value="1"> Мгновенный внутренний перевод</label>
+      <label><input type="radio" name="q34" value="2"> Перевод наличными</label>
+      <label><input type="radio" name="q34" value="3"> Перевод через почту</label>
+    </div>
+
+    <div class="question">
+      <p>35. Какой лимит на перевод в CZK обычно действует для мгновенных платежей?</p>
+      <label><input type="radio" name="q35" value="0"> До 200 000 CZK</label>
+      <label><input type="radio" name="q35" value="1"> До 10 000 CZK</label>
+      <label><input type="radio" name="q35" value="2"> Нет лимита</label>
+      <label><input type="radio" name="q35" value="3"> До 50 000 CZK</label>
+    </div>
+
+    <div class="question">
+      <p>36. Какие данные чаще всего проверяются при оформлении кредита?</p>
+      <label><input type="radio" name="q36" value="0"> Кредитная история, доход, трудоустройство</label>
+      <label><input type="radio" name="q36" value="1"> Цвет автомобиля</label>
+      <label><input type="radio" name="q36" value="2"> Хобби заемщика</label>
+      <label><input type="radio" name="q36" value="3"> Наличие домашних животных</label>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">Проверить ответы</button>
   </form>
 
-  <div id="result" class="result" style="display:none;"></div>
+  <div id="result" class="result"></div>
 
   <script>
-    // Правильные ответы: индекс выбранного варианта (начинается с 0)
-    const correctAnswers = [
-      2, 1, 0, 0, 0, 0, 1, 0, 0, 1,
-      3, 2, 0, 0, 0, 0, 0, 0, 2, 0,
-      0, 0, 1, 0, 0, 0, 0, 0, 0, 0
+    // Правильные ответы по индексам (0-based)
+    const answers = [
+      1, 0, 0, 0, 0,
+      0, 3, 0, 0, 1,
+      2, 0, 0, 0, 0,
+      0, 0, 0, 2, 1,
+      0, 0, 1, 0, 1,
+      0, 0, 0, 1, 0,
+      0, 0, 0, 0, 0,
+      0, 0
     ];
 
-    const form = document.getElementById('quizForm');
-    const resultDiv = document.getElementById('result');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
+    function checkAnswers() {
       let score = 0;
-      let feedback = '';
+      let feedbackHtml = '';
 
-      for(let i = 1; i <= correctAnswers.length; i++) {
-        const qName = 'q' + i;
-        const selected = form.elements[qName];
-        let userAnswer = -1;
-        for(let option of selected) {
-          if(option.checked) {
-            userAnswer = parseInt(option.value);
-            break;
-          }
+      for(let i = 0; i < answers.length; i++) {
+        const selected = document.querySelector(`input[name="q${i+1}"]:checked`);
+        if (!selected) {
+          feedbackHtml += `<p class="feedback wrong">Вопрос ${i+1}: Не отвечен</p>`;
+          continue;
         }
 
-        if(userAnswer === -1) {
-          feedback += `<p><b>Вопрос ${i}:</b> Не выбран ответ.</p>`;
-        } else if(userAnswer === correctAnswers[i-1]) {
+        const userAnswer = Number(selected.value);
+        if(userAnswer === answers[i]) {
           score++;
-          feedback += `<p class="feedback correct"><b>Вопрос ${i}:</b> Правильно.</p>`;
+          feedbackHtml += `<p class="feedback correct">Вопрос ${i+1}: Верно</p>`;
         } else {
-          feedback += `<p class="feedback wrong"><b>Вопрос ${i}:</b> Неправильно. Правильный ответ: ${getAnswerText(i, correctAnswers[i-1])}</p>`;
+          const correctLabel = document.querySelector(`input[name="q${i+1}"][value="${answers[i]}"]`).parentNode.textContent.trim();
+          feedbackHtml += `<p class="feedback wrong">Вопрос ${i+1}: Неверно. Правильный ответ: ${correctLabel}</p>`;
         }
       }
 
-      feedback = `<h2>Результат: ${score} из ${correctAnswers.length}</h2>` + feedback;
-      resultDiv.innerHTML = feedback;
-      resultDiv.style.display = 'block';
-      window.scrollTo({ top: resultDiv.offsetTop, behavior: 'smooth' });
-    });
-
-    function getAnswerText(questionNumber, answerIndex) {
-      const questions = [
-        ["Мгновенные переводы", "SWIFT-переводы", "SEPA-переводы", "Наличные через почту"],
-        ["Быстрее мгновенных", "Более низкая комиссия", "Нет ограничений по сумме", "Работают только в Чехии"],
-        ["Society for Worldwide Interbank Financial Telecommunication", "Simple Worldwide Instant Funds Transfer", "System Without International Financial Transactions", "None of the above"],
-        ["1-2 рабочих дня", "Мгновенно", "До недели", "Несколько часов"],
-        ["Евро", "Чешская крона", "Словацкая крона", "Доллары США"],
-        ["SWIFT/BIC код", "IBAN", "CPF", "MICR"],
-        ["Расписка", "Квитанция", "Счёт", "Выписка из банка"],
-        ["Да", "Нет", "Только через SWIFT", "Только через банк-посредник"],
-        ["Международный номер банковского счёта", "Код банка", "Номер перевода", "Номер карты"],
-        ["Нет", "Да", "Только при сумме свыше 1000 евро", "Только в выходные"],
-        ["SEPA", "Western Union", "SWIFT", "Наличные"],
-        ["IBAN получателя", "BIC/SWIFT код банка", "Адрес получателя", "Сумма перевода"],
-        ["Деньги приходят в течение минут", "Перевод происходит в течение дня", "Перевод занимает до 3 дней", "Деньги приходят в конце месяца"],
-        ["Валюта и сумма перевода", "Количество участников", "Адрес получателя", "Срок доставки"],
-        ["IBAN и BIC код", "Имя получателя и адрес", "Паспортные данные отправителя", "Телефон получателя"],
-        ["Да, если получатель не снял деньги", "Нет", "Только в первые 24 часа", "Только если банк допускает"],
-        ["SEPA", "SWIFT", "Western Union", "PayPal"],
-        ["IBAN и BIC", "Только номер карты", "Адрес и телефон", "Только имя получателя"],
-        ["Все страны Евросоюза", "Только страны еврозоны", "Евросоюз + Норвегия, Исландия, Лихтенштейн", "Все страны Европы"],
-        ["Нет, только в евро", "Да", "Только доллары", "Только кроны"],
-        ["Для идентификации банка при переводах", "Для указания валюты", "Для обозначения страны", "Для кода филиала"],
-        ["По длине и контрольному числу", "По первым двум буквам", "По номеру счёта", "По банку отправителя"],
-        ["Только имя получателя", "IBAN получателя", "Адрес банка", "Номер паспорта"],
-        ["Плата за проведение операции", "Процент от суммы вклада", "Сумма возврата", "Плата за пользование картой"],
-        ["Нет", "Да", "Только если сумма до 100 евро", "Только в Чехии"],
-        ["Уникальный идентификатор операции", "Код банка", "Номер счёта", "Дата перевода"],
-        ["Тем, кто переводит большие суммы", "Тем, кто переводит мелкие суммы", "Тем, кто переводит внутри одной страны", "Тем, кто хочет избежать комиссий"],
-        ["Счёт банка в другом банке для международных операций", "Счёт клиента в банке", "Личный счёт отправителя", "Счёт для внутренних переводов"],
-        ["Банк-получатель", "Банк-отправитель", "Корреспондентский банк", "Ни один"],
-        ["Проверка формата и контрольного числа IBAN", "Проверка наличия средств", "Проверка адреса клиента", "Проверка паспорта"]
-      ];
-      return questions[questionNumber - 1][answerIndex];
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `Ваш результат: ${score} из ${answers.length}<br>` + feedbackHtml;
     }
   </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Тест по банковским переводам</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 15px;
-      background: #f5f5f5;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    form {
-      background: #fff;
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .question {
-      margin-bottom: 18px;
-    }
-    .question p {
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-    label {
-      display: block;
-      margin-bottom: 6px;
-      cursor: pointer;
-    }
-    input[type="radio"] {
-      margin-right: 10px;
-      vertical-align: middle;
-      cursor: pointer;
-    }
-    button {
-      display: block;
-      margin: 20px auto 0;
-      background: #007bff;
-      color: #fff;
-      padding: 12px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background: #0056b3;
-    }
-    .result {
-      max-width: 800px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      font-size: 16px;
-      line-height: 1.4;
-    }
-    .feedback.correct {
-      color: green;
-      margin-bottom: 4px;
-    }
-    .feedback.wrong {
-      color: red;
-      margin-bottom: 4px;
-    }
 
-    /* Адаптивность */
-    @media (max-width: 600px) {
-      body {
-        margin: 10px;
-      }
-      form, .result {
-        padding: 15px;
-        max-width: 100%;
-      }
-      button {
-        width: 100%;
-        font-size: 18px;
-        padding: 15px 0;
-      }
-      label {
-        font-size: 14px;
-      }
-      .question p {
-        font-size: 16px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <h1>Тест по банковским переводам Чехия-Словакия</h1>
-  <form id="quizForm">
-
-    <div class="question">
-      <p>1. Какой тип банковских переводов самый дешёвый между Чехией и Словакией?</p>
-      <label><input type="radio" name="q1" value="0"> Мгновенные переводы</label>
-      <label><input type="radio" name="q1" value="1"> SWIFT-переводы</label>
-      <label><input type="radio" name="q1" value="2"> SEPA-переводы</label>
-      <label><input type="radio" name="q1" value="3"> Наличные через почту</label>
-    </div>
-
-    <div class="question">
-      <p>2. Какое преимущество SEPA-переводов?</p>
-      <label><input type="radio" name="q2" value="0"> Быстрее мгновенных</label>
-      <label><input type="radio" name="q2" value="1"> Более низкая комиссия</label>
-      <label><input type="radio" name="q2" value="2"> Нет ограничений по сумме</label>
-      <label><input type="radio" name="q2" value="3"> Работают только в Чехии</label>
-    </div>
-
-    <div class="question">
-      <p>3. Что означает аббревиатура SWIFT?</p>
-      <label><input type="radio" name="q3" value="0"> Society for Worldwide Interbank Financial Telecommunication</label>
-      <label><input type="radio" name="q3" value="1"> Simple Worldwide Instant Funds Transfer</label>
-      <label><input type="radio" name="q3" value="2"> System Without International Financial Transactions</label>
-      <label><input type="radio" name="q3" value="3"> None of the above</label>
-    </div>
-
-    <div class="question">
-      <p>4. Как долго обычно занимает SEPA-перевод?</p>
-      <label><input type="radio" name="q4" value="0"> 1-2 рабочих дня</label>
-      <label><input type="radio" name="q4" value="1"> Мгновенно</label>
-      <label><input type="radio" name="q4" value="2"> До недели</label>
-      <label><input type="radio" name="q4" value="3"> Несколько часов</label>
-    </div>
-
-    <div class="question">
-      <p>5. Какая валюта используется в SEPA-переводах?</p>
-      <label><input type="radio" name="q5" value="0"> Евро</label>
-      <label><input type="radio" name="q5" value="1"> Чешская крона</label>
-      <label><input type="radio" name="q5" value="2"> Словацкая крона</label>
-      <label><input type="radio" name="q5" value="3"> Доллары США</label>
-    </div>
-
-    <div class="question">
-      <p>6. Какой код используется для идентификации банков в SWIFT?</p>
-      <label><input type="radio" name="q6" value="0"> SWIFT/BIC код</label>
-      <label><input type="radio" name="q6" value="1"> IBAN</label>
-      <label><input type="radio" name="q6" value="2"> CPF</label>
-      <label><input type="radio" name="q6" value="3"> MICR</label>
-    </div>
-
-    <div class="question">
-      <p>7. Какой документ подтверждает проведение банковского перевода?</p>
-      <label><input type="radio" name="q7" value="0"> Расписка</label>
-      <label><input type="radio" name="q7" value="1"> Квитанция</label>
-      <label><input type="radio" name="q7" value="2"> Счёт</label>
-      <label><input type="radio" name="q7" value="3"> Выписка из банка</label>
-    </div>
-
-    <div class="question">
-      <p>8. Можно ли отправить SEPA-перевод в Чехии на счёт в Словакии?</p>
-      <label><input type="radio" name="q8" value="0"> Да</label>
-      <label><input type="radio" name="q8" value="1"> Нет</label>
-      <label><input type="radio" name="q8" value="2"> Только через SWIFT</label>
-      <label><input type="radio" name="q8" value="3"> Только через банк-посредник</label>
-    </div>
-
-    <div class="question">
-      <p>9. Что такое IBAN?</p>
-      <label><input type="radio" name="q9" value="0"> Международный номер банковского счёта</label>
-      <label><input type="radio" name="q9" value="1"> Код банка</label>
-      <label><input type="radio" name="q9" value="2"> Номер перевода</label>
-      <label><input type="radio" name="q9" value="3"> Номер карты</label>
-    </div>
-
-    <div class="question">
-      <p>10. Можно ли использовать SWIFT-перевод для срочных платежей?</p>
-      <label><input type="radio" name="q10" value="0"> Нет</label>
-      <label><input type="radio" name="q10" value="1"> Да</label>
-      <label><input type="radio" name="q10" value="2"> Только при сумме свыше 1000 евро</label>
-      <label><input type="radio" name="q10" value="3"> Только в выходные</label>
-    </div>
-
-    <div class="question">
-      <p>11. Какой из следующих вариантов НЕ является видом банковских переводов?</p>
-      <label><input type="radio" name="q11" value="0"> SEPA</label>
-      <label><input type="radio" name="q11" value="1"> Western Union</label>
-      <label><input type="radio" name="q11" value="2"> SWIFT</label>
-      <label><input type="radio" name="q11" value="3"> Наличные</label>
-    </div>
-
-    <div class="question">
-      <p>12. Какой реквизит НЕ нужен для SEPA-перевода?</p>
-      <label><input type="radio" name="q12" value="0"> IBAN получателя</label>
-      <label><input type="radio" name="q12" value="1"> BIC/SWIFT код банка</label>
-      <label><input type="radio" name="q12" value="2"> Адрес получателя</label>
-      <label><input type="radio" name="q12" value="3"> Сумма перевода</label>
-    </div>
-
-    <div class="question">
-      <p>13. В каком случае перевод считается мгновенным?</p>
-      <label><input type="radio" name="q13" value="0"> Деньги приходят в течение минут</label>
-      <label><input type="radio" name="q13" value="1"> Перевод происходит в течение дня</label>
-      <label><input type="radio" name="q13" value="2"> Перевод занимает до 3 дней</label>
-      <label><input type="radio" name="q13" value="3"> Деньги приходят в конце месяца</label>
-    </div>
-
-    <div class="question">
-      <p>14. Что влияет на стоимость SWIFT-перевода?</p>
-      <label><input type="radio" name="q14" value="0"> Валюта и сумма перевода</label>
-      <label><input type="radio" name="q14" value="1"> Количество участников</label>
-      <label><input type="radio" name="q14" value="2"> Адрес получателя</label>
-      <label><input type="radio" name="q14" value="3"> Срок доставки</label>
-    </div>
-
-    <div class="question">
-      <p>15. Какие данные обязательно проверяет банк при международном переводе?</p>
-      <label><input type="radio" name="q15" value="0"> IBAN и BIC код</label>
-      <label><input type="radio" name="q15" value="1"> Имя получателя и адрес</label>
-      <label><input type="radio" name="q15" value="2"> Паспортные данные отправителя</label>
-      <label><input type="radio" name="q15" value="3"> Телефон получателя</label>
-    </div>
-
-    <div class="question">
-      <p>16. Можно ли отменить SWIFT-перевод после отправки?</p>
-      <label><input type="radio" name="q16" value="0"> Да, если получатель не снял деньги</label>
-      <label><input type="radio" name="q16" value="1"> Нет</label>
-      <label><input type="radio" name="q16" value="2"> Только в первые 24 часа</label>
-      <label><input type="radio" name="q16" value="3"> Только если банк допускает</label>
-    </div>
-
-    <div class="question">
-      <p>17. Какой сервис используют для перевода денег между Чехией и Словакией?</p>
-      <label><input type="radio" name="q17" value="0"> SEPA</label>
-      <label><input type="radio" name="q17" value="1"> SWIFT</label>
-      <label><input type="radio" name="q17" value="2"> Western Union</label>
-      <label><input type="radio" name="q17" value="3"> PayPal</label>
-    </div>
-
-    <div class="question">
-      <p>18. Что нужно для выполнения SEPA-перевода?</p>
-      <label><input type="radio" name="q18" value="0"> IBAN и BIC</label>
-      <label><input type="radio" name="q18" value="1"> Только номер карты</label>
-      <label><input type="radio" name="q18" value="2"> Адрес и телефон</label>
-      <label><input type="radio" name="q18" value="3"> Только имя получателя</label>
-    </div>
-
-    <div class="question">
-      <p>19. Какие страны входят в зону SEPA?</p>
-      <label><input type="radio" name="q19" value="0"> Все страны Евросоюза</label>
-      <label><input type="radio" name="q19" value="1"> Только страны еврозоны</label>
-      <label><input type="radio" name="q19" value="2"> Евросоюз + Норвегия, Исландия, Лихтенштейн</label>
-      <label><input type="radio" name="q19" value="3"> Все страны Европы</label>
-    </div>
-
-    <div class="question">
-      <p>20. Можно ли отправить SEPA-перевод в иностранной валюте?</p>
-      <label><input type="radio" name="q20" value="0"> Нет, только в евро</label>
-      <label><input type="radio" name="q20" value="1"> Да</label>
-      <label><input type="radio" name="q20" value="2"> Только доллары</label>
-      <label><input type="radio" name="q20" value="3"> Только кроны</label>
-    </div>
-
-    <div class="question">
-      <p>21. Для чего нужен BIC-код?</p>
-      <label><input type="radio" name="q21" value="0"> Для идентификации банка при переводах</label>
-      <label><input type="radio" name="q21" value="1"> Для указания валюты</label>
-      <label><input type="radio" name="q21" value="2"> Для обозначения страны</label>
-      <label><input type="radio" name="q21" value="3"> Для кода филиала</label>
-    </div>
-
-    <div class="question">
-      <p>22. Как определить правильность IBAN?</p>
-      <label><input type="radio" name="q22" value="0"> По длине и контрольному числу</label>
-      <label><input type="radio" name="q22" value="1"> По первым двум буквам</label>
-      <label><input type="radio" name="q22" value="2"> По номеру счёта</label>
-      <label><input type="radio" name="q22" value="3"> По банку отправителя</label>
-    </div>
-
-    <div class="question">
-      <p>23. Что нужно указать при переводе на другой счёт?</p>
-      <label><input type="radio" name="q23" value="0"> Только имя получателя</label>
-      <label><input type="radio" name="q23" value="1"> IBAN получателя</label>
-      <label><input type="radio" name="q23" value="2"> Адрес банка</label>
-      <label><input type="radio" name="q23" value="3"> Номер паспорта</label>
-    </div>
-
-    <div class="question">
-      <p>24. Что такое комиссия банка?</p>
-      <label><input type="radio" name="q24" value="0"> Плата за проведение операции</label>
-      <label><input type="radio" name="q24" value="1"> Процент от суммы вклада</label>
-      <label><input type="radio" name="q24" value="2"> Сумма возврата</label>
-      <label><input type="radio" name="q24" value="3"> Плата за пользование картой</label>
-    </div>
-
-    <div class="question">
-      <p>25. Можно ли отправить деньги на чужой счёт без подтверждения личности?</p>
-      <label><input type="radio" name="q25" value="0"> Нет</label>
-      <label><input type="radio" name="q25" value="1"> Да</label>
-      <label><input type="radio" name="q25" value="2"> Только если сумма до 100 евро</label>
-      <label><input type="radio" name="q25" value="3"> Только в Чехии</label>
-    </div>
-
-    <div class="question">
-      <p>26. Что такое "референтный номер" в переводе?</p>
-      <label><input type="radio" name="q26" value="0"> Уникальный идентификатор операции</label>
-      <label><input type="radio" name="q26" value="1"> Код банка</label>
-      <label><input type="radio" name="q26" value="2"> Номер счёта</label>
-      <label><input type="radio" name="q26" value="3"> Дата перевода</label>
-    </div>
-
-    <div class="question">
-      <p>27. Кому выгоднее использовать SWIFT-переводы?</p>
-      <label><input type="radio" name="q27" value="0"> Тем, кто переводит большие суммы</label>
-      <label><input type="radio" name="q27" value="1"> Тем, кто переводит мелкие суммы</label>
-      <label><input type="radio" name="q27" value="2"> Тем, кто переводит внутри одной страны</label>
-      <label><input type="radio" name="q27" value="3"> Тем, кто хочет избежать комиссий</label>
-    </div>
-
-    <div class="question">
-      <p>28. Что такое "корреспондентский счёт"?</p>
-      <label><input type="radio" name="q28" value="0"> Счёт банка в другом банке для международных операций</label>
-      <label><input type="radio" name="q28" value="1"> Счёт клиента в банке</label>
-      <label><input type="radio" name="q28" value="2"> Личный счёт отправителя</label>
-      <label><input type="radio" name="q28" value="3"> Счёт для внутренних переводов</label>
-    </div>
-
-    <div class="question">
-      <p>29. Какой банк обычно берёт комиссию за получение SWIFT-перевода?</p>
-      <label><input type="radio" name="q29" value="0"> Банк-получатель</label>
-      <label><input type="radio" name="q29" value="1"> Банк-отправитель</label>
-      <label><input type="radio" name="q29" value="2"> Корреспондентский банк</label>
-      <label><input type="radio" name="q29" value="3"> Ни один</label>
-    </div>
-
-    <div class="question">
-      <p>30. Что значит "IBAN проверка"?</p>
-      <label><input type="radio" name="q30" value="0"> Проверка формата и контрольного числа IBAN</label>
-      <label><input type="radio" name="q30" value="1"> Проверка наличия средств</label>
-      <label><input type="radio" name="q30" value="2"> Проверка адреса клиента</label>
-      <label><input type="radio" name="q30" value="3"> Проверка паспорта</label>
-    </div>
-
-    <button type="submit">Проверить ответы</button>
-  </form>
-
-  <div id="result" class="result" style="display:none;"></div>
-
-  <script>
-    // Правильные ответы: индекс выбранного варианта (начинается с 0)
-    const correctAnswers = [
-      2, 1, 0, 0, 0, 0, 1, 0, 0, 1,
-      3, 2, 0, 0, 0, 0, 0, 0, 2, 0,
-      0, 0, 1, 0, 0, 0, 0, 0, 0, 0
-    ];
-
-    const form = document.getElementById('quizForm');
-    const resultDiv = document.getElementById('result');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      let score = 0;
-      let feedback = '';
-
-      for(let i = 1; i <= correctAnswers.length; i++) {
-        const qName = 'q' + i;
-        const selected = form.elements[qName];
-        let userAnswer = -1;
-        for(let option of selected) {
-          if(option.checked) {
-            userAnswer = parseInt(option.value);
-            break;
-          }
-        }
-
-        if(userAnswer === -1) {
-          feedback += `<p><b>Вопрос ${i}:</b> Не выбран ответ.</p>`;
-        } else if(userAnswer === correctAnswers[i-1]) {
-          score++;
-          feedback += `<p class="feedback correct"><b>Вопрос ${i}:</b> Правильно.</p>`;
-        } else {
-          feedback += `<p class="feedback wrong"><b>Вопрос ${i}:</b> Неправильно. Правильный ответ: ${getAnswerText(i, correctAnswers[i-1])}</p>`;
-        }
-      }
-
-      feedback = `<h2>Результат: ${score} из ${correctAnswers.length}</h2>` + feedback;
-      resultDiv.innerHTML = feedback;
-      resultDiv.style.display = 'block';
-      window.scrollTo({ top: resultDiv.offsetTop, behavior: 'smooth' });
-    });
-
-    function getAnswerText(questionNumber, answerIndex) {
-      const questions = [
-        ["Мгновенные переводы", "SWIFT-переводы", "SEPA-переводы", "Наличные через почту"],
-        ["Быстрее мгновенных", "Более низкая комиссия", "Нет ограничений по сумме", "Работают только в Чехии"],
-        ["Society for Worldwide Interbank Financial Telecommunication", "Simple Worldwide Instant Funds Transfer", "System Without International Financial Transactions", "None of the above"],
-        ["1-2 рабочих дня", "Мгновенно", "До недели", "Несколько часов"],
-        ["Евро", "Чешская крона", "Словацкая крона", "Доллары США"],
-        ["SWIFT/BIC код", "IBAN", "CPF", "MICR"],
-        ["Расписка", "Квитанция", "Счёт", "Выписка из банка"],
-        ["Да", "Нет", "Только через SWIFT", "Только через банк-посредник"],
-        ["Международный номер банковского счёта", "Код банка", "Номер перевода", "Номер карты"],
-        ["Нет", "Да", "Только при сумме свыше 1000 евро", "Только в выходные"],
-        ["SEPA", "Western Union", "SWIFT", "Наличные"],
-        ["IBAN получателя", "BIC/SWIFT код банка", "Адрес получателя", "Сумма перевода"],
-        ["Деньги приходят в течение минут", "Перевод происходит в течение дня", "Перевод занимает до 3 дней", "Деньги приходят в конце месяца"],
-        ["Валюта и сумма перевода", "Количество участников", "Адрес получателя", "Срок доставки"],
-        ["IBAN и BIC код", "Имя получателя и адрес", "Паспортные данные отправителя", "Телефон получателя"],
-        ["Да, если получатель не снял деньги", "Нет", "Только в первые 24 часа", "Только если банк допускает"],
-        ["SEPA", "SWIFT", "Western Union", "PayPal"],
-        ["IBAN и BIC", "Только номер карты", "Адрес и телефон", "Только имя получателя"],
-        ["Все страны Евросоюза", "Только страны еврозоны", "Евросоюз + Норвегия, Исландия, Лихтенштейн", "Все страны Европы"],
-        ["Нет, только в евро", "Да", "Только доллары", "Только кроны"],
-        ["Для идентификации банка при переводах", "Для указания валюты", "Для обозначения страны", "Для кода филиала"],
-        ["По длине и контрольному числу", "По первым двум буквам", "По номеру счёта", "По банку отправителя"],
-        ["Только имя получателя", "IBAN получателя", "Адрес банка", "Номер паспорта"],
-        ["Плата за проведение операции", "Процент от суммы вклада", "Сумма возврата", "Плата за пользование картой"],
-        ["Нет", "Да", "Только если сумма до 100 евро", "Только в Чехии"],
-        ["Уникальный идентификатор операции", "Код банка", "Номер счёта", "Дата перевода"],
-        ["Тем, кто переводит большие суммы", "Тем, кто переводит мелкие суммы", "Тем, кто переводит внутри одной страны", "Тем, кто хочет избежать комиссий"],
-        ["Счёт банка в другом банке для международных операций", "Счёт клиента в банке", "Личный счёт отправителя", "Счёт для внутренних переводов"],
-        ["Банк-получатель", "Банк-отправитель", "Корреспондентский банк", "Ни один"],
-        ["Проверка формата и контрольного числа IBAN", "Проверка наличия средств", "Проверка адреса клиента", "Проверка паспорта"]
-      ];
-      return questions[questionNumber - 1][answerIndex];
-    }
-  </script>
 </body>
 </html>
